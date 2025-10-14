@@ -1,0 +1,27 @@
+﻿@using System.Security.Cryptography
+
+@model IEnumerable<SauApp.Models.Student>
+
+<h2>@ViewBag.CoursCode - @ViewBag.CoursName</h2>
+<h3>Today: @ViewBag.CoursDate</h3>
+<h4>Number of Attendants = @ViewBag.NumberOfAccepts</h4>
+
+<table>
+<thead><b>Signed Students :</b></thead>
+    <tbody>
+        @foreach (var i in (Model ?? Enumerable.Empty<SauApp.Models.Student>()))
+        {
+            if (i?.Signed == true)
+            {
+                <tr>
+                    <td>@i.Name @i.Surname</td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>
+<div>
+<a href="/Student/Index"> Click To Sign</a>
+
+
+</div>
