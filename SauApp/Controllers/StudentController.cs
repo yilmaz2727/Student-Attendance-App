@@ -3,7 +3,7 @@ using SauApp.Models;
 
 namespace SauApp.Controllers
 {
-    public class Student : Controller
+    public class StudentController:Controller 
     {
         public ActionResult Index()
         {
@@ -14,7 +14,13 @@ namespace SauApp.Controllers
         {
             return View();
         }
-    
+
+        [HttpPost]
+    public ActionResult Register(Student studentSign1)
+        {
+            Repository.SignStudent(studentSign1);
+            return View();
+        }
 
 
     }

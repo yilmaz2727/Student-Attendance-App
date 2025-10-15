@@ -94,3 +94,4 @@ C:\Users\hüseyin\OneDrive\Desktop\SauApp\SauApp\obj\Debug\net9.0\refint\SauApp.
 C:\Users\hüseyin\OneDrive\Desktop\SauApp\SauApp\obj\Debug\net9.0\SauApp.pdb
 C:\Users\hüseyin\OneDrive\Desktop\SauApp\SauApp\obj\Debug\net9.0\SauApp.genruntimeconfig.cache
 C:\Users\hüseyin\OneDrive\Desktop\SauApp\SauApp\obj\Debug\net9.0\ref\SauApp.dll
+C:\Users\hüseyin\OneDrive\Desktop\SauApp\SauApp\obj\Debug\net9.0\SauApp.sourcelink.json
