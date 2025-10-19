@@ -3,7 +3,7 @@ using SauApp.Models;
 
 namespace SauApp.Controllers
 {
-    public class StudentController:Controller 
+    public class StudentController : Controller
     {
         public ActionResult Index()
         {
@@ -22,26 +22,33 @@ namespace SauApp.Controllers
 
             if (student == null)
             {
-                return RedirectToAction("Register");
+                ModelState.AddModelError("StudentID", "Invalid ID"); 
+             return View("Register");
             }
-            if(!student.Signed)
+
+            if (student.Signed == true)
+            {
+                ModelState.AddModelError("StudentID", "You have already signed in.");
+                return View("Register");
+            }
+
+            else
             {
                 student.Signed = true;
                 student.SignedAt = DateTime.Now;
-                return View("FeedBack", student);// !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+                ViewBag.successfully = $"{student.StudentID}{student.Name} {student.Surname} has successfully signed.";
             }
-            else
-            {
-                ViewBag.ErrorMessage = "You have Already Sign!";
-                return View();
-            }
+             ViewBag.Student = student;
+
+             return View("Register");
         }
-      
-    
+
+
+
 
     }
-    
 
-    
+
+
 
 }

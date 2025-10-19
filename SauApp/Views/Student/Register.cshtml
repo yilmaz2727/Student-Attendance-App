@@ -2,11 +2,22 @@
 @model SauApp.Models.Student
 
 
-<form action="/Student/Register" method="post">
 
-    <div>
-        <label>ID:</label>
-        <input type="text" name="studentId" />
-    </div>
-    <button type="submit">SIGN</button>
-</form>
+ @if (ViewBag.Student == null)
+        {
+            <form asp-controller="Student" asp-action="Register" method="post">
+                <label for="studentId">Student ID:</label>
+                <input type="text" name="studentId">
+                <br>
+                <input type="submit" value="Sign In">
+                <span asp-validation-for="StudentID" style="color:red;"></span> 
+            </form>
+        }
+        @if (ViewBag.Student != null)
+        {
+            <p>Total number of attendants: @SauApp.Models.Repository.Students.Count(s => s.Signed)</p>
+             <div>@ViewBag.successfully</div>
+            <br>
+
+            <a asp-controller="Home" asp-action="Index">Home</a>
+        }
