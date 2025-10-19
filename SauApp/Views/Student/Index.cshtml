@@ -1,18 +1,27 @@
 @using SauApp.Models
 @model List<Student>
 
-<h3>List of participants: </h3>
+
+<h1>List of All Students</h1>
 <table>
-    <thead>
-        <tr> Name </tr>
-        <tr> Attendance </tr>
-    </thead>
-    <tbody>
-        @foreach(var i in Model){
+    <tr>
+        <th>Student ID</th>
+        <th>Name</th>
+        <th>Surname</th>
+        <th>Signed</th>
+        <th>Details</th>
+    </tr>
+    @foreach (var student in SauApp.Models.Repository.Students)
+    {
         <tr>
-            <td> @i.Name </td>
-         
+            <td>@student.StudentID</td>
+            <td>@student.Name</td>
+            <td>@student.Surname</td>
+            <td>@(student.Signed ? "Yes" : "No")</td>
+            <td><a asp-controller="Students" asp-action="Info" >
+                    View Details
+                </a>
+            </td>
         </tr>
-        }
-    </tbody>
+    }
 </table>

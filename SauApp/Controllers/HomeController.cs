@@ -10,15 +10,16 @@ namespace SauApp.Controllers
     {
         public IActionResult Index()
         {
-            var students = Repository.GetGuests();
+           
 
 
             ViewBag.CoursCode = "CS101";
             ViewBag.CoursName = "Intro";
             ViewBag.CoursDate = DateTime.Today.ToShortDateString();
-            ViewBag.NumberOfAccepts = students.Count(s => s.Signed);
+            ViewBag.NumberOfAccepts = Repository.Students.Count(s => s.Signed);
 
-            return View(students); // kritik: modeli View'a gönder
+            return View(Repository.Students);
         }
+        
     }
 }

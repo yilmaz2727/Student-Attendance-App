@@ -7,25 +7,41 @@ namespace SauApp.Controllers
     {
         public ActionResult Index()
         {
-            return View(Repository.GetGuests());
+            var student = Repository.Students;
+            return View(student);
         }
         [HttpGet]
         public ActionResult Register()
         {
             return View();
         }
-
         [HttpPost]
-    public ActionResult Register(Student studentSign1)
+        public ActionResult Register(string studentId)
         {
-            Repository.SignStudent(studentSign1);
-            return View();
-        }
+            var student = Repository.Students.FirstOrDefault(s => s.StudentID == studentId);
 
+            if (student == null)
+            {
+                return RedirectToAction("Register");
+            }
+            if(!student.Signed)
+            {
+                student.Signed = true;
+                student.SignedAt = DateTime.Now;
+                return View("FeedBack", student);// !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+            }
+            else
+            {
+                ViewBag.ErrorMessage = "You have Already Sign!";
+                return View();
+            }
+        }
+      
+    
 
     }
     
 
-
+    
 
 }

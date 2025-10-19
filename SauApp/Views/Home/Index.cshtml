@@ -14,14 +14,17 @@
             if (i?.Signed == true)
             {
                 <tr>
-                    <td>@i.Name @i.Surname</td>
+                    <td>@i.Name @i.Surname </td>
                 </tr>
             }
         }
     </tbody>
 </table>
 <div>
-<a href="/Student/Index"> Click To Sign</a>
+<div>
+<a asp-controller="Student" asp-action="Register"> Click To Sign</a></div>
+<div>
+<a asp-controller="Student" asp-action="Index"> All Student</a>   </div>
 
 
 </div>

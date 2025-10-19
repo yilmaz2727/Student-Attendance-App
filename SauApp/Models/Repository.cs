@@ -170,14 +170,15 @@ public static class Repository
             SignedAt = new DateTime(2025, 10, 5, 14, 30, 00)
         });
     }
-    public static List<Student> GetGuests()
-    { return _students; }
+     public static IEnumerable<Student> Students => _students;
 
 
-    public static void SignStudent(Student studentSign)
-    {
-        _students.Add(studentSign);
-    }
+     
+
+
+   
+
+    
 
 
 

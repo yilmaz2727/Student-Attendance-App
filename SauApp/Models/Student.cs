@@ -4,7 +4,8 @@ public class Student
 {
 
     public string? StudentID { get; set; } = String.Empty;
-    public string Name { get; set; }
+    public string? Name { get; set; }= String.Empty;
+
 
     public string? Surname { get; set; }= String.Empty;
 
