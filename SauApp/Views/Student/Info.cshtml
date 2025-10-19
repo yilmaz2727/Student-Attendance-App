@@ -1,0 +1,18 @@
+@model SauApp.Models.Student
+
+<head>
+    <title>Attandance Info</title>
+</head>
+
+<p>Student signed at:
+    @if(Model.Signed)
+    {
+        @Model.SignedAt
+    }
+    else
+    {
+       <span><mark>False</mark></span>
+    }
+</p>
+ <p><b>ID: @Model.StudentID</b></p>
+ <p><b>Name: @Model.Name</b></p>

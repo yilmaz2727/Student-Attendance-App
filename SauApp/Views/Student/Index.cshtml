@@ -18,8 +18,8 @@
             <td>@student.Name</td>
             <td>@student.Surname</td>
             <td>@(student.Signed ? "Yes" : "No")</td>
-            <td><a asp-controller="Students" asp-action="Info" >
-                    View Details
+            <td><a asp-controller="Student" asp-action="Info"asp-route-id="@student.StudentID" >
+                    View
                 </a>
             </td>
         </tr>
