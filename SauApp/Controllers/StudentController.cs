@@ -36,7 +36,7 @@ namespace SauApp.Controllers
             {
                 student.Signed = true;
                 student.SignedAt = DateTime.Now;
-                ViewBag.successfully = $"{student.StudentID}{student.Name} {student.Surname} has successfully signed.";
+                ViewBag.successfully = $"{student.StudentID} {student.Name} {student.Surname} has successfully signed.";
             }
             ViewBag.Student = student;
 
